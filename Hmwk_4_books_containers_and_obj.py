@@ -41,6 +41,18 @@ class books_container (object):
                         print("\nThe container has no books to give.\n")
                         err = books("-1")
                         return err
+
+        def returnCategoryList(self,x):
+                booksOfCat = []
+                if self.listSize() != 0:
+                        for j in range (0,self.listSize()):
+                                if x == self.booksList[j].bookID:
+                                        booksOfCat.append(self.booksList[j])
+                else:
+                        print("The list is empty")
+                if len(booksOfCat) == 0:
+                        print("No books of that category were found.")
+                return booksOfCat
         
         def disp_info(self,x):#returns a string displaying all the info of the book in the "x" index of the book array
                 string = self.booksList[x].bookID+"\t  "+self.booksList[x].booksName+self.booksList[x].NtabNum+self.booksList[x].booksAuthor+self.booksList[x].AtabNum+self.booksList[x].quantity+"\t$"+self.booksList[x].price
@@ -83,6 +95,7 @@ class books_container (object):
                                         print("Book price updated")
                 else:
                     print(y," is not valid input. No changes were made to Item ", x)
+                    
         def getIndxFromTitle(self,x):#returns the index of the first book in the array which matches the passed in title.
                 x = str(x)
                 if self.listSize() != 0:
@@ -156,15 +169,15 @@ class books (object):#this is a book object. It has five things. BookID, book na
 Inventory = books_container()
 Cart = books_container()
 Inventory.returnBooksTitle("Penthouse").bookID
-Inventory.newBook("2343","Books","Ann. Author","0.65")
-Inventory.newBook("5634","Binders","Ann. Author","1.65")
-Inventory.newBook("0923","Pens","Ann. Author","5.65")
-Inventory.newBook("4567","Chocolate","Ann. Author","5.65")
-Inventory.newBook("2653","Staples","Ann. Author","3.65")
-Inventory.newBook("3097","Pencils","Ann. Author","9.65")
-Inventory.newBook("2022","Towels","Ann. Author","1.30")
-Inventory.newBook("3421","Paper","Ann. Author","6.65")
-Inventory.newBook("0455","Detergent","Ann. Author","3.65")
+Inventory.newBook("Cat1","Books","Ann. Author","0.65")
+Inventory.newBook("Cat2","Binders","Ann. Author","1.65")
+Inventory.newBook("Cat3","Pens","Ann. Author","5.65")
+Inventory.newBook("Cat2","Chocolate","Ann. Author","5.65")
+Inventory.newBook("Cat2","Staples","Ann. Author","3.65")
+Inventory.newBook("Cat2","Pencils","Ann. Author","9.65")
+Inventory.newBook("Cat3","Towels","Ann. Author","1.30")
+Inventory.newBook("Cat4","Paper","Ann. Author","6.65")
+Inventory.newBook("Cat1","Detergent","Ann. Author","3.65")
 Inventory.disp_all()
 Cart.addBook(Inventory.returnBooksIndx(3),2)
 Cart.addBook(Inventory.returnBooksIndx(1),3)
@@ -185,6 +198,20 @@ Cart.disp_all()
 print(Cart.booksTotalQty())
 print(Cart.booksTotalPrice())
 
+print("\nBooks of Category Cat1")
+rList = Inventory.returnCategoryList("Cat1")
+for j in range (0,len(rList)):
+        print(rList[j].booksName+rList[j].NtabNum+rList[j].booksAuthor+rList[j].AtabNum+rList[j].price)
+
+print("\nBooks of Category Cat2")        
+rList = Inventory.returnCategoryList("Cat2")
+for j in range (0,len(rList)):
+        print(rList[j].booksName+rList[j].NtabNum+rList[j].booksAuthor+rList[j].AtabNum+rList[j].price)
+
+print("\nBooks of Category Cat3")
+rList = Inventory.returnCategoryList("Cat3")
+for j in range (0,len(rList)):
+        print(rList[j].booksName+rList[j].NtabNum+rList[j].booksAuthor+rList[j].AtabNum+rList[j].price)
 #####################Output########################
 #
 #The container has no books to give.
@@ -226,3 +253,18 @@ print(Cart.booksTotalPrice())
 #
 #Qty. total 39 items
 #Total cost $208.65
+#
+#
+#Books of Category Cat1
+#Books			Ann. Author	0.65
+#Detergent		Ann. Author	3.65
+#
+#Books of Category Cat2
+#Binders		Ann. Author	1.65
+#Chocolate		Ann. Author	5.65
+#Staples		Ann. Author	3.65
+#Pencils		Ann. Author	9.65
+#
+#Books of Category Cat3
+#Pens			Ann. Author	5.65
+#Towels		Ann. Author	1.30
