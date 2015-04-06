@@ -145,15 +145,34 @@ class books_container (object):
                         print("No books of that category were found.")
                 return booksOfCat
         
-        def disp_info(self,x):#returns a string displaying all the info of the book in the "x" index of the book array
-                string = self.booksList[x].bookID+"\t  "+self.booksList[x].booksName+self.booksList[x].NtabNum+self.booksList[x].booksAuthor+self.booksList[x].AtabNum+self.booksList[x].quantity+"\t$"+self.booksList[x].price
+        def disp_info(self,x,maxTitleWidth=-1,maxAuthorWidth=-1):#returns a string displaying all the info of the book in the "x" index of the book array
+                if(maxTitleWidth == -1):
+                    maxTitleWidth  = len(self.booksList[x].booksName)
+                if(maxAuthorWidth == -1):
+                    maxAuthorWidth  = len(self.booksList[x].booksAuthor)
+                #string = self.booksList[x].bookID+"\t  "+self.booksList[x].booksName+self.booksList[x].NtabNum+self.booksList[x].booksAuthor+self.booksList[x].AtabNum+self.booksList[x].quantity+"\t$"+self.booksList[x].price
+                string = "%-*s" % (len("Software Engineering")+4,self.booksList[x].bookID) + "%-*s" % (maxTitleWidth+4,self.booksList[x].booksName) + "%-*s" % (maxAuthorWidth+4,self.booksList[x].booksAuthor) + "%-*s" % (5,self.booksList[x].quantity) + "$" + self.booksList[x].price 
                 return string
                   
         def disp_all(self):#Displays a formatted list of all books in the Inventory/Cart
-                print("List No.\t Category Book Name\t\tAuthor\t\tQty.\tPrice")
-                print("================================================================================")
-                for self.x in range(0,self.listSize()):
-                        print (str(self.x)+".\t\t",self.disp_info(self.x))
+                #Gets maximum title and author widths for formatting purposes.
+                maxTitleWidth=6
+                maxAuthorWidth=6
+                for x in range(0,self.listSize()):
+                    if len(self.booksList[x].booksName) > maxTitleWidth:
+                        maxTitleWidth = len(self.booksList[x].booksName)
+                    if len(self.booksList[x].booksAuthor) > maxAuthorWidth:
+                        maxAuthorWidth = len(self.booksList[x].booksAuthor)
+                    
+		
+                #print("List No.\t Category Book Name\t\tAuthor\t\tQty.\tPrice")
+                print ("%-*s" % (12,'List No.') + "%-*s" % (len("Software Engineering")+4,"Category") 
+                                + "%-*s" % (maxTitleWidth+4,"Title") + "%-*s" % (maxAuthorWidth+4,"Author")
+                                + "%-*s" % (5,"Qty") + "Price"   )
+                print("="*(maxTitleWidth+maxAuthorWidth+55))
+                for x in range(0,self.listSize()):
+                        print ("%-*s" % (12,x) + self.disp_info(x,maxTitleWidth,maxAuthorWidth))
+                        #print (str(self.x)+".\t\t",self.disp_info(self.x))
                 print("\n\n")
 
         def updateBookInfo(self,x,y,z): #self, Title,booksValueToChange,newValue
