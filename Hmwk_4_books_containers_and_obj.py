@@ -154,7 +154,7 @@ class books_container (object):
                 string = "%-*s" % (len("Software Engineering")+4,self.booksList[x].bookID) + "%-*s" % (maxTitleWidth+4,self.booksList[x].booksName) + "%-*s" % (maxAuthorWidth+4,self.booksList[x].booksAuthor) + "%-*s" % (5,self.booksList[x].quantity) + "$" + self.booksList[x].price 
                 return string
                   
-        def disp_all(self):#Displays a formatted list of all books in the Inventory/Cart
+        def disp_all(self, disp_cost = False):#Displays a formatted list of all books in the Inventory/Cart
                 #Gets maximum title and author widths for formatting purposes.
                 maxTitleWidth=6
                 maxAuthorWidth=6
@@ -165,14 +165,18 @@ class books_container (object):
                         maxAuthorWidth = len(self.booksList[x].booksAuthor)
                     
 		
-                #print("List No.\t Category Book Name\t\tAuthor\t\tQty.\tPrice")
+                #Prints books in order
                 print ("%-*s" % (12,'List No.') + "%-*s" % (len("Software Engineering")+4,"Category") 
                                 + "%-*s" % (maxTitleWidth+4,"Title") + "%-*s" % (maxAuthorWidth+4,"Author")
                                 + "%-*s" % (5,"Qty") + "Price"   )
                 print("="*(maxTitleWidth+maxAuthorWidth+55))
                 for x in range(0,self.listSize()):
                         print ("%-*s" % (12,x) + self.disp_info(x,maxTitleWidth,maxAuthorWidth))
-                        #print (str(self.x)+".\t\t",self.disp_info(self.x))
+                        
+                #If argument is true, prints cost
+                if(disp_cost):
+                    print("%*s" % ((maxTitleWidth+maxAuthorWidth+55),self.booksTotalPrice()))
+                        
                 print("\n\n")
 
         def updateBookInfo(self,x,y,z): #self, Title,booksValueToChange,newValue

@@ -3,7 +3,7 @@ from readfile import buildDBfromFile
 import readline # makes input builtin nicer
 
 print("Welcome to the Data Base book ordering system")
-print("There are 6 things you can do:")
+print("There are 5 things you can do:")
 
 # Initialization of the order and store inventory containers
 inventory = buildDBfromFile("bookdatabase.txt")
@@ -63,7 +63,7 @@ def removeBookFromOrder():
 		
 # Prints the current order
 def printOrder():
-	order.disp_all()
+	order.disp_all(True)
 	
 	sfCounter  = 0
 	tvlCounter = 0
@@ -81,7 +81,7 @@ def printOrder():
 			
 	# Outputs warning if you two book from each category haven't been added to the order
 	if sfCounter < 2 or tvlCounter < 2 or soeCounter < 2:
-		print("Warning: you have not purchased at least two books in each category")
+		print("Warning: you have not selected at least two books in each category")
 
 # Main user input loop
 while True: 
