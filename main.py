@@ -1,12 +1,13 @@
-import Hmwk_4_books_containers_and_obj
+import Hmwk_4_books_containers_and_obj as obj
+from readfile import buildDBfromFile
+import readline # makes input builtin nicer
 
 print("Welcome to the Data Base book ordering system")
 print("There are 6 things you can do:")
 
 # Initialization of the order and store inventory containers
-inventory = Hmwk_4_books_containers_and_obj.books_container()
-inventory.newBook("Cat1","Books","Ann. Author","0.65") # This is for testing
-order     = Hmwk_4_books_containers_and_obj.books_container()
+inventory = buildDBfromFile("bookdatabase.txt")
+order     = obj.books_container()
 
 def displayFromCategory():
 	category = input("What category do you want displayed(Science Fiction, Travel, Software Engineering)? ")
@@ -85,22 +86,24 @@ while True:
 	print("3) Remove a book from the order")
 	print("4) Print Order")
 	print("5) Exit")
-	
+
 	actionStr = input("Select your action: ")
-	action    = int(actionStr)
-	
-	# process different inputs
-	if action == 1:
-		displayFromCategory()
-	elif action == 2:
-		addBookToOrder()
-	elif action == 3:
-		removeBookFromOrder()
-	elif action == 4:
-		printOrder()
-	elif action == 5:
-		break
-	else:
-		print("Incorrect input, try again")
-		
-		
+	try:
+		action    = int(actionStr)
+
+		# process different inputs
+		if action == 1:
+			displayFromCategory()
+		elif action == 2:
+			addBookToOrder()
+		elif action == 3:
+			removeBookFromOrder()
+		elif action == 4:
+			printOrder()
+		elif action == 5:
+			break
+		else:
+			print("Incorrect input, try again")
+	except ValueError:
+		print("Could not read input, try again")
+
