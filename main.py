@@ -13,8 +13,29 @@ def displayFromCategory():
 	category = input("What category do you want displayed(Science Fiction, Travel, Software Engineering)? ")
 	print("\nBooks of Category ", category)
 	rList = inventory.returnCategoryList(category)
+	
+	#Determine maximum widths so widths can be set uniform
+	maxTitleWidth=0
+	maxAuthorWidth=0
 	for j in range (0,len(rList)):
-		print(rList[j].booksName+rList[j].NtabNum+rList[j].booksAuthor+rList[j].AtabNum+rList[j].price)
+		if len(rList[j].booksName) > maxTitleWidth:
+			maxTitleWidth = len(rList[j].booksName)
+		if len(rList[j].booksAuthor) > maxAuthorWidth:
+			maxAuthorWidth = len(rList[j].booksAuthor)
+	
+	print("%-*s" % (maxTitleWidth+2,'Title') + "%-*s" % (maxAuthorWidth+2,'Author') + 'price')
+	print('='*(maxTitleWidth+maxAuthorWidth+8))
+	for j in range (0,len(rList)):
+		print("%-*s" % (maxTitleWidth+2,rList[j].booksName) + "%-*s" % (maxAuthorWidth+2,rList[j].booksAuthor) + '$' + rList[j].price)
+		
+		
+	#print("List No.\t Category Book Name\t\tAuthor\t\tPrice")
+	#	print("================================================================================")
+	#	for j in range(0,len(rList)):
+	#		print (j+".\t\t",self.disp_info(self.x))
+	
+	#for j in range (0,len(rList)):
+		#print(rList[j].booksName+rList[j].NtabNum+rList[j].booksAuthor+rList[j].AtabNum+rList[j].price)
 	
 # Add a book to the order
 def addBookToOrder():
@@ -51,9 +72,9 @@ def removeBookFromOrder():
 def printOrder():
 	order.disp_all()
 	
-	sfCounter  = 0
-	tvlCounter = 0
-	soeCounter = 0
+	sfCounter  = 50
+	tvlCounter = 40
+	soeCounter = 100
 	
 	# Increments the counters for the three categories if they are found in the order
 	for i in range(order.listSize()):
@@ -71,7 +92,7 @@ def printOrder():
 
 # Main user input loop
 while True: 
-	print("1) Display all books in a category (Science Fiction, Travel, Software Engineering)")
+	print("\n1) Display all books in a category (Science Fiction, Travel, Software Engineering)")
 	print("2) Add a book to the order")
 	print("3) Remove a book from the order")
 	print("4) Print Order")
