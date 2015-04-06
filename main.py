@@ -3,7 +3,7 @@ from readfile import buildDBfromFile
 import readline # makes input builtin nicer
 
 print("Welcome to the Data Base book ordering system")
-print("There are 5 things you can do:")
+print("There are 6 things you can do:")
 
 # Initialization of the order and store inventory containers
 inventory = buildDBfromFile("bookdatabase.txt")
@@ -89,7 +89,8 @@ while True:
 	print("2) Add a book to the order")
 	print("3) Remove a book from the order")
 	print("4) Print Order")
-	print("5) Exit")
+	print("5) Print Total")
+	print("6) Exit")
 
 	actionStr = input("Select your action: ")
 	try:
@@ -105,6 +106,8 @@ while True:
 		elif action == 4:
 			printOrder()
 		elif action == 5:
+			print(order.booksTotalPrice())
+		elif action == 6:
 			break
 		else:
 			print("Incorrect input, try again")
