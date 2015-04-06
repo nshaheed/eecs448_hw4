@@ -9,6 +9,7 @@ def buildDBfromFile(filename):
     for line in file:
         if line[0] == "-": # book entry
             [author, title] = line[2:].split(", ", 1) # drop "- ", then split at the comma
+            title = title[:title.find("[S1]")].strip() # remove [S1] and whitespace - users must be able to type the full title in current implementation
             if not category:
                 raise ValueError("Database file could not be parsed.")
             else:

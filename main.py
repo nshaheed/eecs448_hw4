@@ -43,7 +43,7 @@ def removeBookFromOrder():
 	foundTitle = False;
 	titleIdx   = -1;
 	
-	for i in range(0, inventory.listSize()):
+	for i in range(inventory.listSize()):
 		if inventory.getTitle(i) == title:
 			foundTitle = True
 			titleIdx   = i
@@ -66,8 +66,8 @@ def printOrder():
 	soeCounter = 0
 	
 	# Increments the counters for the three categories if they are found in the order
-	for i in range(0, order.listSize()):
-		cat = order.getCat(x)
+	for i in range(order.listSize()):
+		x = order.getCat(i)
 		if x == "Science Fiction":
 			sfCounter = sfCounter + 1
 		elif x == "Travel":

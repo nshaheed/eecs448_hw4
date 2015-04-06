@@ -203,7 +203,7 @@ class books_container (object):
                 return len(self.booksList)
         
         def getCat(self,x):#:3 Return Category
-                return self.booksList[x].BookID
+                return self.booksList[x].bookID
         
         def getTitle(self,x):# Return Title
                 return self.booksList[x].booksName
