@@ -27,7 +27,7 @@ To add an existing book to the container (order), call
 addBook(Book Object,Qty)
 
 (Qty is again optional and defaults to 1)
-The Book Object is usually recieved by calling
+The Book Object is usually received by calling
 
 returnBooksIndx(index)
 or
@@ -56,7 +56,7 @@ disp_all()
 displays the entire container and it's items attributes ina formatted
 list
 
-To get individual values about the items inthe container
+To get individual values about the items in the container
 
 disp_info(index) : returns all attributes of a book as a formatted
 string
@@ -83,7 +83,7 @@ used to get a list of all the books from a certain category.
 
 returns a list of Books objects.
 
-example code and test cases /outputare uncluded at the bottom of the
+example code and test cases/output are included at the bottom of the
 file
 '''
 
