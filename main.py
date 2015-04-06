@@ -28,14 +28,7 @@ def displayFromCategory():
 	for j in range (0,len(rList)):
 		print("%-*s" % (maxTitleWidth+2,rList[j].booksName) + "%-*s" % (maxAuthorWidth+2,rList[j].booksAuthor) + '$' + rList[j].price)
 		
-		
-	#print("List No.\t Category Book Name\t\tAuthor\t\tPrice")
-	#	print("================================================================================")
-	#	for j in range(0,len(rList)):
-	#		print (j+".\t\t",self.disp_info(self.x))
-	
-	#for j in range (0,len(rList)):
-		#print(rList[j].booksName+rList[j].NtabNum+rList[j].booksAuthor+rList[j].AtabNum+rList[j].price)
+
 	
 # Add a book to the order
 def addBookToOrder():
@@ -72,9 +65,9 @@ def removeBookFromOrder():
 def printOrder():
 	order.disp_all()
 	
-	sfCounter  = 50
-	tvlCounter = 40
-	soeCounter = 100
+	sfCounter  = 0
+	tvlCounter = 0
+	soeCounter = 0
 	
 	# Increments the counters for the three categories if they are found in the order
 	for i in range(order.listSize()):
