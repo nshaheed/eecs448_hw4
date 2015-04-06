@@ -78,6 +78,11 @@ to select which value follow this
 4. change Qty
 5. change Price
 
+returnCategoryList("Category")
+used to get a list of all the books from a certain category.
+
+returns a list of Books objects.
+
 example code and test cases /outputare uncluded at the bottom of the
 file
 '''
