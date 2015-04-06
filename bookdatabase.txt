@@ -1,0 +1,63 @@
+Science Fiction Books ($50 each)
+- Frank Herbert, Dune [S1]
+- Orson Scott Card, Ender's Game [S1]
+- Isaac Asimov, The Foundation Trilogy
+- Douglas Adams, Hitch Hiker's Guide to the Galaxy [S1]
+- George Orwell, 1984
+- Robert A Heinlein, Stranger in a Strange Land
+- Ray Bradbury, Fahrenheit 451
+- Arthur C Clarke, 2001: A Space Odyssey
+- Philip K Dick, Do Androids Dream of Electric Sheep?
+- William Gibson, Neuromancer [S1]
+- Isaac Asimov, [C] I, Robot
+- Robert A Heinlein, Starship Troopers
+- Larry Niven, Ringworld [S1]
+- Arthur C Clarke, Rendezvous With Rama
+- Dan Simmons, Hyperion [S1]
+- Aldous Huxley, Brave New World
+- Joe Haldeman, The Forever War
+- H G Wells, The Time Machine
+- Arthur C Clarke, Childhood's End
+- Robert A Heinlein, The Moon is a Harsh Mistress
+Travel Books ($40 each)
+- Norman Lewis, A Dragon Apparent
+- Colin McPhee, A House in Bali
+- Ernest Hemingway, A Moveable Feast
+- Eric Newby, A Short Walk in the Hindu Kush
+- Patrick Leigh Fermor, A Time of Gifts
+- V.S. Naipaul, A Turn in the South
+- Bill Bryson, A Walk in the Woods
+- Freya Stark, A Winter in Arabia
+- Colin Thubron, Among the Russians
+- V.S. Naipaul, An Area of Darkness
+- Wilfred Thesiger, Arabian Sands
+- Barry Lopez, Arctic Dreams
+- Alain de Botton, The Art of Travel
+- Laurie Lee, As I Walked Out One Midsummer Morning
+- Tony Horwitz, Baghdad Without a Map
+- Robert D. Kaplan, Balkan Ghosts
+- Freya Stark, Beyond Euphrates
+- Eric Hansen, The Bird Man and the Lap Dancer
+- Lawrence Durrell, Bitter Lemons of Cyprus
+- Rebecca West, Black Lamb and Grey Falcon
+Software Engineering Books ($100 each)
+- Steve McConnell, Code Complete: A Handbook of Software Construction
+- Elisabeth Freeman etc., Head First Design Patterns
+- Steve McConnell, Rapid Development
+- Erich Gamma, Design Patterns: Elements of Reusable Object-Oriented Software
+- Bruce Schneier, Cryptography: Protocols, Algorithms, and Source Code
+- Robert C. Martin, Agile Software Development: Principles, Patterns and Practices
+- Joel Spolsky, Joel on Software
+- Tom DeMarco, Peopleware: Productive Projects and Teams
+- Frederick P. Brooks, The Mythical Man-Month, Anniversary Edition
+- Martin Fowler, Refactoring: Improving the Design of Existing Code
+- Mike Cohn, Agile Estimating and Planning
+- Alistair Cockburn, Writing Effective Use Cases
+- Bertrand Meyer, Object-Oriented Software Construction
+- Steve McConnell, Software Estimation: Demystifying the Black Art
+- Mike Cohn, User Stories Applied: For Agile Software Development
+- Donald E. Knuth, The Art of Computer Programming
+- Martin Fowler, Patterns of Enterprise Application Architecture
+- Jeffrey Friedl, Mastering Regular Expressions
+- Andrew Hunt, The Pragmatic Programmer
+- 20 Karl E. Wiegers, Software Requirements 
