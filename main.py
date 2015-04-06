@@ -40,21 +40,11 @@ def addBookToOrder():
 # Remove a book from the order
 def removeBookFromOrder():
 	title = input("Enter the title that you wish to remove from your order: ")
-	foundTitle = False;
-	titleIdx   = -1;
-	
-	for i in range(inventory.listSize()):
-		if inventory.getTitle(i) == title:
-			foundTitle = True
-			titleIdx   = i
-			
-			# If title is found, exit loop
-			break
-			
-	if foundTitle:
-		order.removeBook(titleIdx)
+	index = order.getIndxFromTitle(title)
+	if index >= 0:
+		order.removeBook(index)
 	else:
-		print("Could not find title")
+		print("Could not find title.")
 		
 		
 # Prints the current order
