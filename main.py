@@ -23,8 +23,8 @@ def displayFromCategory():
 		if len(rList[j].booksAuthor) > maxAuthorWidth:
 			maxAuthorWidth = len(rList[j].booksAuthor)
 	
-	print("%-*s" % (maxTitleWidth+2,'Title') + "%-*s" % (maxAuthorWidth+2,'Author') + 'price')
-	print('='*(maxTitleWidth+maxAuthorWidth+8))
+	print("%-*s" % (maxTitleWidth+2,'Title') + "%-*s" % (maxAuthorWidth+2,'Author') + 'Price')
+	print('='*(maxTitleWidth+maxAuthorWidth+9))
 	for j in range (0,len(rList)):
 		print("%-*s" % (maxTitleWidth+2,rList[j].booksName) + "%-*s" % (maxAuthorWidth+2,rList[j].booksAuthor) + '$' + rList[j].price)
 		
