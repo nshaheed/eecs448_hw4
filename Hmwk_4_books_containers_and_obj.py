@@ -1,3 +1,89 @@
+'''
+
+Title: Book Container Class and Book Object
+Author: Daniel Murtha
+
+
+This contains the book container.
+It is populated with book objects.
+You can create containers like this
+
+Inventory = books_container()
+Cart = books_container()
+
+and call them like this
+Cart.disp_all()
+
+Populating:
+Simply call
+
+Inventory.newBook(Category,Title,Author,Price,Quantity)
+
+(Qty is optional and defaults to 1)
+To create a new book (in the inventory).
+
+To add an existing book to the container (order), call
+
+addBook(Book Object,Qty)
+
+(Qty is again optional and defaults to 1)
+The Book Object is usually recieved by calling
+
+returnBooksIndx(index)
+or
+returnBooksTitle("Title")
+
+both return a book object if there is one
+or an error book object with Category = "-1" if there isn't one. They
+also return the error book if the list is empty
+This is in addition to printing an appropriate error message.
+
+To get individual values about the container
+
+getIndxFromTitle("Title"): returns the index in the array of the book
+with the title provided. It returns -1 if title not found and -2 if the
+list is empty.
+
+listSize() : Returns the length of the list
+
+booksTotalPrice() : Returns a formatted string of the total value of the
+container.
+
+booksTotalQty() : Returns a formatted string of the total number of
+items in the container.
+
+disp_all()
+displays the entire container and it's items attributes ina formatted
+list
+
+To get individual values about the items inthe container
+
+disp_info(index) : returns all attributes of a book as a formatted
+string
+getCat(index) : returns the category of a book as a string
+getTitle(index) : returns the totle of a book as a string
+getAuthor(index) : returns the author of a book as a string
+getQty(index): returns the qty of a book as a string
+
+editing items values in a list
+
+removeBook(index) : removes the book at a specific index
+
+updateBookInfo(Title,value to change (1-5),newValue)
+Updates a specific value of a specific book.
+to select which value follow this
+1. change Category
+2. change Title
+3. change Author
+4. change Qty
+5. change Price
+
+example code and test cases /outputare uncluded at the bottom of the
+file
+'''
+
+
+
 class books_container (object):
         def __init__(self):#initializes the book array with zero books :(
                 self.booksList = []
